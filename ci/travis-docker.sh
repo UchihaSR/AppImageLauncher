@@ -67,5 +67,5 @@ fi
 
 # run build
 docker run -e ARCH -e TRAVIS_BUILD_NUMBER --rm -i "${DOCKER_OPTS[@]}" -v $(readlink -f ..):/ws "$IMAGE" \
-    bash -xc "export CI=1 && export DEBIAN_DIST=\"$DOCKER_DIST\" && cd /ws && source travis/$build_script"
+    bash -xc "export CI=1 && export DEBIAN_DIST=\"$DOCKER_DIST\" && cd /ws && source ci/$build_script"
 
