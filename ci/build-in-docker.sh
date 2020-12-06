@@ -54,7 +54,7 @@ fi
 
 # figure out which build script to use
 if [[ "$BUILD_LITE" == "" ]]; then
-    build_script=travis-build.sh
+    build_script=build.sh
 else
     build_script=build-lite.sh
 fi

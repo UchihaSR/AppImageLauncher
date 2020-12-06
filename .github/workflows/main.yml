@@ -10,8 +10,11 @@ jobs:
       ARCH: x86_64
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - name: Build in Docker
-        run: bash -ex ci/travis-docker.sh "$DIST"
+        run: bash -ex ci/build-in-docker.sh "$DIST"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -25,8 +28,11 @@ jobs:
       ARCH: i386
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - name: Build in Docker
-        run: bash -ex ci/travis-docker.sh "$DIST"
+        run: bash -ex ci/build-in-docker.sh "$DIST"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -40,8 +46,11 @@ jobs:
       ARCH: x86_64
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - name: Build in Docker
-        run: bash -ex ci/travis-docker.sh "$DIST"
+        run: bash -ex ci/build-in-docker.sh "$DIST"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -55,8 +64,11 @@ jobs:
       ARCH: i386
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - name: Build in Docker
-        run: bash -ex ci/travis-docker.sh "$DIST"
+        run: bash -ex ci/build-in-docker.sh "$DIST"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -70,10 +82,13 @@ jobs:
       ARCH: arm64
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - name: Set up QEMU integration for Docker
         run: docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
       - name: Build in Docker
-        run: bash -ex ci/travis-docker.sh "$DIST"
+        run: bash -ex ci/build-in-docker.sh "$DIST"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -87,10 +102,13 @@ jobs:
       ARCH: armhf
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - name: Set up QEMU integration for Docker
         run: docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
       - name: Build in Docker
-        run: bash -ex ci/travis-docker.sh "$DIST"
+        run: bash -ex ci/build-in-docker.sh "$DIST"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -104,10 +122,13 @@ jobs:
       ARCH: armhf
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - name: Set up QEMU integration for Docker
         run: docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
       - name: Build in Docker
-        run: bash -ex ci/travis-docker.sh "$DIST"
+        run: bash -ex ci/build-in-docker.sh "$DIST"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -122,8 +143,11 @@ jobs:
       BUILD_LITE: 1
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - name: Build in Docker
-        run: bash -ex ci/travis-docker.sh "$DIST"
+        run: bash -ex ci/build-in-docker.sh "$DIST"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -138,8 +162,11 @@ jobs:
       BUILD_LITE: 1
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - name: Build in Docker
-        run: bash -ex ci/travis-docker.sh "$DIST"
+        run: bash -ex ci/build-in-docker.sh "$DIST"
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
